@@ -1,5 +1,9 @@
 <nav class="custom-navbar">
   <div class="container">
+    <span class="navbar-text">
+      <p style="color:white;font-size:20px;"><b>{{ .Site.Title }}</b></p> 
+    </span>
+    <span style="padding-left:20px">
     {{ range .Site.Menus.nav }}
     <a href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
