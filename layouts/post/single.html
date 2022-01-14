@@ -8,6 +8,7 @@
   {{ .PublishDate.Format $customDateFormat }}{{ if gt .Lastmod .PublishDate }}, updated {{ .Lastmod.Format $customDateFormat }}{{ end }}
   </small>
   {{ partial "tags" . }}
+  {{ partial "categories" . }}
 </p>
 {{ .Content }}
 
