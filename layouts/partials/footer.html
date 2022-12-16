@@ -3,11 +3,12 @@
   var x = setInterval(function() {
       var now = new Date().getTime();
       var distance = now - countDownDate.getTime();
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var years = Math.floor(distance / (365 * 1000 * 60 * 60 * 24));
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24) - (years > 0 ? 365 : 0));
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      document.getElementById("demo").innerHTML = (years > 0 ? years + "y " : '') + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
   }, 1000);
 </script>
 
