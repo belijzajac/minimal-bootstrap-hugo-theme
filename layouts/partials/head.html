@@ -30,8 +30,11 @@
   {{ $bootstrapCss := "css/bootstrap.min.css" }}
   <link rel="stylesheet" href="{{ $bootstrapCss | absURL }}" />
 
+  {{ $fontAwesomeCss := "css/font-awesome.min.css" }}
+  <link rel="stylesheet" href="{{ $fontAwesomeCss | absURL }}" />
+
   {{ if .IsHome }}
-  {{ $homepage := "Home" }}
+  {{ $homepage := "Posts" }}
   {{ with .Site.Menus.nav }}
     {{ range first 1 . }}
       {{ $homepage = .Name }}

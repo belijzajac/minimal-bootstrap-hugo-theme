@@ -1,29 +1,11 @@
 <style>
+
 body {
   min-width: 300px;
 }
 
-.custom-navbar {
+.navbar {
   margin-bottom: 1em;
-  height: 60px;
-}
-
-.custom-navbar a {
-  display: inline-block; 
-  padding: 18px 0;
-  margin-right: 1em; 
-  font-weight: bold; 
-}
-
-.custom-navbar a:hover,
-.custom-navbar a:focus {
-  text-decoration: none; 
-}
-
-@media print {
-  .custom-navbar {
-    display: none;
-  }
 }
 
 article {
@@ -80,38 +62,6 @@ a:focus {
 a:hover,
 a:focus {
   color: #0056b3;
-}
-{{ end }}
-
-{{ with .Site.Params.navbarBackgroundColor }}
-.custom-navbar {
-  background-color: {{ . | safeCSS }};
-}
-{{ else }}
-.custom-navbar {
-  background-color: #212529;
-}
-{{ end }}
-
-{{ with .Site.Params.navbarLinkColor }}
-.custom-navbar a {
-  color: {{ . | safeCSS }};
-}
-{{ else }}
-.custom-navbar a {
-  color: rgba(255,255,255,.75);
-}
-{{ end }}
-
-{{ with .Site.Params.navbarLinkHoverColor }}
-.custom-navbar a:hover,
-.custom-navbar a:focus {
-  color: {{ . | safeCSS }};
-}
-{{ else }}
-.custom-navbar a:hover,
-.custom-navbar a:focus {
-  color: rgba(255,255,255,1);
 }
 {{ end }}
 

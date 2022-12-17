@@ -1,6 +1,6 @@
 {{- define "main" -}}
 
-{{ $homepage := "Home" }}
+{{ $homepage := "Posts" }}
 {{ with .Site.Menus.nav }}
   {{ range first 1 . }}
     {{ $homepage = .Name }}

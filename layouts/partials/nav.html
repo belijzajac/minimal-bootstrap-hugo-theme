@@ -1,11 +1,39 @@
-<nav class="custom-navbar">
-  <div class="container">
-    <span class="navbar-text">
-      <p style="color:white;font-size:20px;"><b>{{ .Site.Title }}</b></p> 
-    </span>
-    <span style="padding-left:20px">
-    {{ range .Site.Menus.nav }}
-    <a href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #161616;" >
+  <div class="container-fluid">
+    <!-- toggler button -->
+    <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar20">
+      <span class="navbar-toggler-icon"></span>
+      <p class="navbar-brand text-white mb-0">{{ .Site.Title }}</p>
+    </button>
+    <!-- end of toggler button -->
+    <div class="collapse navbar-collapse" id="navbar20">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Posts</a>
+        </li>
+      </ul>
+      <p class="d-none d-md-block lead mb-0 text-white"><b>{{ .Site.Title }}</b> </p>
+      <ul class="navbar-nav ml-auto">
+        <!-- email -->
+        <li class="nav-item mx-1">
+          <a class="nav-link" href="mailto:{{ .Site.Params.emailAddress }}">
+            <i class="fa fa-envelope-o fa-fw fa-lg"></i>
+          </a>
+        </li>
+        <!-- github -->
+        <li class="nav-item mx-1">
+          <a class="nav-link" href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener">
+            <i class="fa fa-github fa-fw fa-lg"></i>
+          </a>
+        </li>
+        <!-- rss -->
+        <li class="nav-item mx-1">
+          <a class="nav-link" href="/index.xml" target="_blank" rel="noopener">
+            <i class="fa fa-rss fa-fw fa-lg"></i>
+          </a>
+        </li>
+        <!-- end of social icons -->
+      </ul>
+    </div>
   </div>
 </nav>
