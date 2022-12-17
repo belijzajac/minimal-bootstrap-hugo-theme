@@ -9,8 +9,16 @@
   </small>
   {{ partial "tags" . }}
 </p>
-{{ .Content }}
 
+<div class="table-of-contents">
+  <b>Table of Contents</b>
+  {{ .TableOfContents }}
+</div>
+
+{{ .Content }}
 {{ partial "about.html" . }}
+
+{{ $tocJs := "js/toc.js" -}}
+<script src="{{ $tocJs | absURL }}"></script>
 
 {{- end -}}
