@@ -1,8 +1,9 @@
-{{ $stickyImage := .Site.Params.stickyImage1 | absURL }}
-{{ if not .IsHome }}
-    {{ $stickyImage = .Site.Params.stickyImage2 | absURL }}
-{{ end }}
-
 <div class="sticky-image">
-  <img src="{{ $stickyImage }}" alt="sticky image">
+{{ if .IsHome }}
+  <img src="{{ .Site.Params.stickyImage1 | absURL }}" alt="shimakaze says">
+{{ else }}
+  <a href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener">
+    <img src="{{ .Site.Params.stickyImage2 | absURL }}" alt="shimakaze says">
+  </a> 
+{{ end }}
 </div>
