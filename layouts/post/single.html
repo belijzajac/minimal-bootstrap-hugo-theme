@@ -17,6 +17,7 @@
 
 {{ .Content }}
 {{ partial "about.html" . }}
+{{ partial "giscus.html" . }}
 
 {{ $tocJs := "js/toc.js" -}}
 <script src="{{ $tocJs | absURL }}"></script>
