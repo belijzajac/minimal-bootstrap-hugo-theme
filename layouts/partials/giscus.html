@@ -1,20 +1,22 @@
-{{ with .Site.Params.useGiscus }}
-<br>
-<script src="https://giscus.app/client.js"
-        data-repo="{{site.Params.giscusRepo}}"
-        data-repo-id="{{site.Params.giscusRepoId}}"
-        data-category="{{site.Params.giscusCategory}}"
-        data-category-id="{{site.Params.giscusCategoryId}}"
-        data-mapping="{{site.Params.giscusMapping}}"
-        data-strict="{{site.Params.giscusStrict}}"
-        data-reactions-enabled="{{site.Params.giscusReactionsEnabled}}"
-        data-emit-metadata="{{site.Params.giscusEmitMetadata}}"
-        data-input-position="{{site.Params.giscusInputPosition}}"
-        data-theme="{{site.Params.giscusTheme}}"
-        data-lang="{{site.Params.giscusLang}}"
-        data-loading="{{site.Params.giscusLoading}}"
-        crossorigin="anonymous"
-        async>
-</script>
-<noscript>Please enable JavaScript to view the comments powered by giscus.</noscript>
+{{ if not .Site.IsServer }}
+  {{ with .Site.Params.useGiscus }}
+  <br>
+  <script src="https://giscus.app/client.js"
+          data-repo="{{site.Params.giscusRepo}}"
+          data-repo-id="{{site.Params.giscusRepoId}}"
+          data-category="{{site.Params.giscusCategory}}"
+          data-category-id="{{site.Params.giscusCategoryId}}"
+          data-mapping="{{site.Params.giscusMapping}}"
+          data-strict="{{site.Params.giscusStrict}}"
+          data-reactions-enabled="{{site.Params.giscusReactionsEnabled}}"
+          data-emit-metadata="{{site.Params.giscusEmitMetadata}}"
+          data-input-position="{{site.Params.giscusInputPosition}}"
+          data-theme="{{site.Params.giscusTheme}}"
+          data-lang="{{site.Params.giscusLang}}"
+          data-loading="{{site.Params.giscusLoading}}"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by giscus</noscript>
+  {{ end }}
 {{ end }}
