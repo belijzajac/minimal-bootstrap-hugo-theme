@@ -58,6 +58,14 @@
 
 /* -------- end table of contents -------- */
 
+.article-subtitle {
+  font-weight: normal;
+  font-size: 1.2rem;
+  background: #eaeaea;
+  border-left: 3px solid #ccc;
+  padding: 0.5em 10px;
+}
+
 mark {
   background: #ffe28e!important
 }
@@ -117,7 +125,7 @@ a:focus {
 }
 {{ end }}
 
-{{ with .Site.Params.wrapperMaxWidth }}
+{{ with .Site.Params.contentPageWidth }}
 .container {
   max-width: {{ . | safeCSS }};
 }
