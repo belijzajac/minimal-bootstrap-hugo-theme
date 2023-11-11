@@ -3,7 +3,7 @@
 <h1>{{ .Title | markdownify }}</h1>
 
 {{ with .Params.description }}
-<h3 class="article-subtitle">
+<h3 class="article-description">
   {{ . }}
 </h3>
 {{ end }}
@@ -17,10 +17,7 @@
   {{ partial "tags" . }}
 </p>
 
-<div class="table-of-contents">
-  <h5><b>CONTENTS</b></h5>
-  {{ .TableOfContents }}
-</div>
+{{ partial "right-side" . }}
 
 {{ .Content }}
 {{ partial "about.html" . }}

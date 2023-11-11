@@ -14,12 +14,6 @@
       </ul>
       <p class="d-none d-md-block lead mb-0 text-white"><b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;{{ .Site.Title }}</b> </p>
       <ul class="navbar-nav ml-auto">
-        <!-- email -->
-        <li class="nav-item mx-1">
-          <a class="nav-link" href="mailto:{{ .Site.Params.emailAddress }}">
-            <i class="fa fa-envelope-o fa-fw fa-lg"></i>
-          </a>
-        </li>
         <!-- github -->
         <li class="nav-item mx-1">
           <a class="nav-link" href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener">
@@ -30,6 +24,12 @@
         <li class="nav-item mx-1">
           <a class="nav-link" href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener">
             <i class="fa fa-twitter fa-fw fa-lg"></i>
+          </a>
+        </li>
+        <!-- email -->
+        <li class="nav-item mx-1">
+          <a class="nav-link" href="mailto:{{ .Site.Params.emailAddress }}">
+            <i class="fa fa-envelope-o fa-fw fa-lg"></i>
           </a>
         </li>
         <!-- rss -->

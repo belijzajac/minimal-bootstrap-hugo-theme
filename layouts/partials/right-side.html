@@ -1,0 +1,53 @@
+<div class="table-of-contents">
+  <h5><b>CONTENTS</b></h5>
+  {{ .TableOfContents }}
+</div>
+
+<div class="follow-me">
+  <h5><b>FOLLOW ME</b></h5>
+
+  <div class="grid-container">
+    <!-- github -->
+    <div class="grid-item">
+      <a class="nav-link" href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener">
+        <i class="fa fa-github fa-fw fa-lg"></i>
+      </a>
+    </div>
+    <!-- twitter -->
+    <div class="grid-item">
+      <a class="nav-link" href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener">
+        <i class="fa fa-twitter fa-fw fa-lg"></i>
+      </a>
+    </div>
+    <!-- email -->
+    <div class="grid-item">
+      <a class="nav-link" href="mailto:{{ .Site.Params.emailAddress }}">
+        <i class="fa fa-envelope-o fa-fw fa-lg"></i>
+      </a>
+    </div>
+    <!-- rss -->
+    <div class="grid-item">
+      <a class="nav-link" href="/index.xml" target="_blank" rel="noopener">
+        <i class="fa fa-rss fa-fw fa-lg"></i>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const tableOfContents = document.querySelector('.table-of-contents');
+  const followMe = document.querySelector('.follow-me');
+
+  function updateFollowMePosition() {
+    const tableOfContentsRect = tableOfContents.getBoundingClientRect();
+    followMe.style.top = tableOfContentsRect.bottom + 40 + 'px';
+  }
+
+  // Initially set the position
+  updateFollowMePosition();
+
+  // Recalculate position when the window is scrolled or resized
+  window.addEventListener('scroll', updateFollowMePosition);
+  window.addEventListener('resize', updateFollowMePosition);
+</script>
