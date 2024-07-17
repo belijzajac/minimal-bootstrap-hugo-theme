@@ -1,4 +1,4 @@
-{{ if not .Site.IsServer }}
+{{ if not hugo.IsServer }}
   {{ with .Site.Params.useGiscus }}
   <br>
   <script src="https://giscus.app/client.js"
