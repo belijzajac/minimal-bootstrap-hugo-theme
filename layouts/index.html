@@ -1,27 +1,15 @@
 {{- define "main" -}}
 
-{{ $homepage := "Posts" }}
-{{ with .Site.Menus.nav }}
-  {{ range first 1 . }}
-    {{ $homepage = .Name }}
-  {{ end }}
-{{ end }}
-<h1>{{ $homepage }}</h1>
-
-{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{ range $pages.ByPublishDate.Reverse }}
-  <p>
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    {{ $customDateFormat := "January 2, 2006" }}
-    {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
-    <br>
-    <small class="text-secondary">{{ .PublishDate.Format $customDateFormat }}</small>
-    {{ partial "tags" . }}
-    {{ if eq .Site.Params.showPostSummary true }}
-    <br>
-    {{ .Summary }}
-    {{ end }}
-  </p>
+{{ partial "author" . }}
+<h3>Recent Posts</h3>
+{{ $pagesToShow := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $posts := $pagesToShow.ByDate.Reverse }}
+<div class="separator-dotted"></div>
+{{ range $posts }}
+  {{ partial "post-card" . }}
+  {{ partial "tags" . }}
+  <span class="br2"></span>
+  <div class="separator-dotted"></div>
 {{ end }}
 
 {{- end -}}

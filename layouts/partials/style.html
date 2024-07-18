@@ -1,5 +1,49 @@
 <style>
 
+/* -------- author -------- */
+
+.author {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  .author-name {
+    font-size: 1.7em;
+    margin-bottom: 2px;
+  }
+
+  .author-bio {
+    margin: 0 auto;
+    opacity: 0.9;
+    max-width: 393px;
+    line-height: 1.688;
+  }
+}
+
+/* -------- list of posts -------- */
+
+.post-item {
+  display: flex;
+  padding-top: 3px;
+  padding-bottom: 0px;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+
+  .post-item-title {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+  }
+}
+
+.br2 {
+  display: block;
+  margin-top: 8px;
+}
+
 /* -------- follow me -------- */
 
 .follow-me {
@@ -103,7 +147,7 @@ highlight {
 }
 
 body {
-  min-width: 300px;
+  min-width: 650px;
 }
 
 .navbar {
@@ -219,6 +263,11 @@ blockquote,
 .separator {
   border: 0;
   border-top: 3px dashed #000;
+}
+
+.separator-dotted {
+  border: 0;
+  border-top: 3px dotted #b1b1b1;
 }
 
 h1 {

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ $fontAwesomeCss | absURL }}" />
 
   {{ if .IsHome }}
-  {{ $homepage := "Posts" }}
+  {{ $homepage := "Home" }}
   {{ with .Site.Menus.nav }}
     {{ range first 1 . }}
       {{ $homepage = .Name }}
