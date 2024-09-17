@@ -7,8 +7,10 @@
 <div class="separator-dotted"></div>
 {{ range $posts }}
   {{ partial "post-card" . }}
-  {{ partial "tags" . }}
-  <span class="br2"></span>
+  <div class="post-item-meta">
+    {{ partial "tags" . }}
+    <span class="post-item-vertical-space"></span>
+  </div>
   <div class="separator-dotted"></div>
 {{ end }}
 
