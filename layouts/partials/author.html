@@ -1,5 +1,5 @@
 <div class="author">
     <img src="{{ .Site.Params.selfieAuthor | absURL }}" alt="selfie" class="mr-3 mt-3 rounded-circle" style="border: 2px solid {{ .Site.Params.selfieAuthorBorderColor }}; border-radius: 50%;">
-    <div class="author-name">{{ .Site.Author.intro }}</div>
-    <div class="author-bio">{{ .Site.Author.description }}</div>
+    <div class="author-name">{{ .Site.Params.authorIntro }}</div>
+    <div class="author-bio">{{ .Site.Params.authorDescription }}</div>
 </div>
