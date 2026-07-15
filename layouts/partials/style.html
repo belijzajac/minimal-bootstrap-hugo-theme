@@ -83,6 +83,9 @@
   box-shadow: 1px 1px 2px rgba(0,0,0,.125);
   word-wrap: break-word;
   box-sizing: border-box;
+  /* don't inherit `article { text-align: justify }`: long wrapped
+     entries would stretch words across the box and look broken */
+  text-align: left;
 }
 
 .table-of-contents ul {
